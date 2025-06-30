@@ -34,7 +34,7 @@ int main(){
     switch (seleccion) //Aqui uso el switch para no andar poniendo muchos if else ni else if ni else(Traten de hacer lo mismo)
     {
         case 'a':
-            printf("Te contesta que son las 5:30pm")
+            printf("Te contesta que son las 5:30pm");
             printf("\na.Le das las gracias");
             printf("\nb.Lo retas a un duelo de caballeros\n");
             scanf(" %c", &seleccion); //Como ven aqui reescribo la variable
@@ -89,7 +89,7 @@ int main(){
                         printf("\nAQUEL QUE VIVE EN SOLEDAD SU VIDA, SU VIDA PARA OTROS IMPORTANTE NO ES SIN NADIE NO PUEDES PASAR");
                         printf("\nMUERE!!");
                         printf("\nMueres solo eso te pasa por ignorar tanto");
-                        printf("\nGRACIAS POR JUGAR!!\n")
+                        printf("\nGRACIAS POR JUGAR!!\n");
                         return 0;
                     } else if(seleccion == 'b'){
                         printf("Te dicen que en la siguiente sala hay que estar preparados, te comentan que es el primer jefe de dos");
