@@ -15,9 +15,8 @@
 
 
 int main(){
-    char seleccion; /*Seleccion es la variable que ustedes tienen que usar siempre en su codigo lo que dice esta variable es que seleccion toma el usuario
-                      Como pueden ver en el codigo siempre se reutiliza no la cambien para llevar un orden y no andar reescribiendo codigo*/
-
+    char seleccion; /*Seleccion es la variable que ustedes tienen que usar siempre en su codigo lo que dice esta variable es que seleccion toma el usuario. Como pueden ver en el codigo siempre se reutiliza no la cambien para llevar un orden y no andar reescribiendo codigo*/
+    int llave = 0; //Llave es el booleano que usamos para acceder a la siguiente recamara, la recamara del jefe
 
     printf("Apareces en un bosque nublado y te encuentras con una puerta, entras a un cuarto grande donde ves a un Ogro\nQue haces?\na.Le pregunto la hora\nb. Lo ataco\nc.regreso a casa a dormir\n");
     scanf(" %c", &seleccion); //Primera seleccion que se hizo
@@ -46,7 +45,8 @@ int main(){
                 printf("El cofre era un cofre trampa y...MUERES\nGRACIAS POR JUGAR!!\n");
                 return 0;
             }else if (seleccion == 'b'){
-
+                printf("Ignoras el cofre... Al inspeccionar la habitación antes de irte, encuentras una LLAVE brillante y la guardas.\n");
+                llave = 1;
                 printf("Continuas a la siguiente sala donde yacen 2 personas\nQue haces?\na.Los ignoras, te gusta mucho ignorar y avanzar\nb.Le preguntas a uno de ellos que hacen ahi\n");
                 scanf(" %c", &seleccion);
                 switch (seleccion)
@@ -62,6 +62,14 @@ int main(){
                         return 0;
                     } else if(seleccion == 'b'){
                         printf("Te dicen que en la siguiente sala hay que estar preparados te comentan que es el primer jefe de 2\nDescubres que la puerta a la que entraste es una mazmorra\nY que al final se encuentran riquezas\n");
+                        printf("Llegan a una gran puerta con símbolos mágicos...\n");
+                        if (llave) {
+                            printf("Usas la llave que encontraste antes. La puerta se abre lentamente revelando la sala del jefe...\n");
+                        } else {
+                            printf("Intentas abrir la puerta, pero está cerrada con magia. No puedes continuar sin una llave.\nGRACIAS POR JUGAR!!\n");
+                            return 0;
+                        }
+
                         printf("Entras a la puerta del jefe y se escucha\nVEO QUE SON 3 PERSONAS MUY BIEN ENFRENTENSE A MI\n*Aparece el jefe*\nLo ves\nQue haces?\na.Lo atacas\nb.Te organizas con tus compañeros\nc.Huyes\n");
                         scanf(" %c", &seleccion);
                         switch (seleccion)
@@ -154,8 +162,10 @@ int main(){
                 }
 
             }else if (seleccion == 'c'){
-                printf("Era un cofre trampa, ocurre una explosion pero logras correr y llegar a la siguiente sala protegiendote\nEncuentras a dos personas\nQue haces?\na.Los ignoras, tu vas directo a tu objetivo\nb.Le preguntas a uno de ellos que hacen ahi\nc.Les preguntas la hora, eres muy puntual siempre preguntas el tiempo\n");
+                printf("Era un cofre trampa, ocurre una explosion pero logras correr y llegar a la siguiente sala protegiendote, ves que la explosion arrojo una LLAVE asi que la recoges\n");
+                printf("Encuentras a dos personas\nQue haces?\na.Los ignoras, tu vas directo a tu objetivo\nb.Le preguntas a uno de ellos que hacen ahi\nc.Les preguntas la hora, eres muy puntual siempre preguntas el tiempo\n");
                 scanf(" %c", &seleccion);
+                llave = 1;
                 switch (seleccion)
                 {
                 case 'a':
@@ -165,7 +175,14 @@ int main(){
 
 
                 case 'b':
-                        printf("Te dicen que en la siguiente sala hay que estar preparados te comentan que es el primer jefe de 3\nDescubres que la puerta a la que entraste es una mazmorra\nY que al final se encuentra un genio que te concede deseos ademas de muchas riquezas\n");
+                        printf("Te dicen que en la siguiente sala hay que estar preparados te comentan que es el primer jefe\nDescubres que la puerta a la que entraste es una mazmorra\nY que al final hay muchas riquezas\n");
+                        printf("Llegan a una gran puerta con símbolos mágicos...\n");
+                        if (llave) {
+                            printf("Usas la llave que encontraste antes. La puerta se abre lentamente revelando la sala del jefe...\n");
+                        } else {
+                            printf("Intentas abrir la puerta, pero está cerrada con magia. No puedes continuar sin una llave.\nGRACIAS POR JUGAR!!\n");
+                            return 0;
+                        }
                         printf("Entras a la puerta del jefe y se escucha\nVEO QUE SON 3 PERSONAS MUY BIEN ENFRENTENSE A MI\n*Aparece el jefe*\nLo ves\nQue haces?\na.Lo atacas\nb.Te organizas con tus compañeros\nc.Huyes\n");
                         scanf(" %c", &seleccion);
                         switch (seleccion)
